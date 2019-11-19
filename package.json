@@ -4,7 +4,8 @@
   "description": "Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "set DEBUG=app,app:* & nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/MalinkaMell/burger#readme",
   "dependencies": {
+    "debug": "^4.1.1",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "mysql": "^2.17.1"

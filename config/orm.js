@@ -1,24 +1,23 @@
 const connection = require('../config/connection');
 
 let orm = {
-    all: function selectAll(tableName, ormCallback) {
-        const sqlQuery = "SELECT * FROM ??";
-        connection.query(sqlQuery, function (error, data) {
+    selectAll: function (tableName, ormCallback) {
+        const sqlQuery = 'SELECT * FROM ??';
+        connection.query(sqlQuery, [tableName], function (error, results) {
+            if (error) throw error;
+            ormCallback(results);
+        })
+    } ,
+    insertOne: function (tableName, values, ormCallback) {
+        const sqlQuery = 'INSERT INTO ?? SET ?'; //one exclamation mark for values!!!!
+        connection.query(sqlQuery, [tableName, values], function (error, data) {
             if (error) throw error;
             ormCallback(data);
         })
-
     },
-    insert: function insertOne(tableName, columnName, columnValue, ormCallback) {
-        const sqlQuery = "INSERT INTO ?? (??) VALUES (??)";
-        connection.query(sqlQuery, function (error, data) {
-            if (error) throw error;
-            ormCallback(data);
-        })
-    },
-    update: function updateOne(tableName, columnName, conditionName, conditionValue, ormCallback) {
-        const sqlQuery = "UPDATE ?? SET ?? WHERE ?? = ??";
-        connection.query(sqlQuery, function (error, data) {
+    updateOne: function (tableName, values, columnName, conditionValue, ormCallback) {
+        const sqlQuery = 'UPDATE ?? SET ? WHERE ?? = ?';
+        connection.query(sqlQuery, [tableName, values, columnName, conditionValue], function (error, data) {
             if (error) throw error;
             ormCallback(data);
         })

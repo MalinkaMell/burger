@@ -1,5 +1,65 @@
-<!-- Setup the index.handlebars to have the template that Handlebars can render onto. 
-Create a button in index.handlebars that will submit the user input into the database.
--->
-
-<h1>hello world</h1>
+<div class="container">
+  <div class="row">
+    <div class="card-group my-4">
+      <div class="card">
+        <div class="card-body">
+          <ol class="list-group">
+            {{#each burger}}
+            {{#unless devoured}}
+            <li class="list-group-item border-warning">
+              <div class="d-flex w-100 justify-content-between burgers">
+                {{@index}}. {{ burger_name }} <span class="float-right"> {{> burger/button devoured=false}}</span>
+              </div>
+            </li>
+            {{/unless}}
+            {{/each}}
+          </ol>
+        </div>
+      </div>
+      <div class="card bg-dark text-white text-center">
+        <div class="card-header">
+          <h1 class="card-title title">Eat-Da-Burger!</h1>
+        </div>
+        <img src="assets/img/burger-1.jpg" class="card-img" alt="Yummy Burgers!">
+        <div class="card-body">
+        </div>
+        <div class="card-footer">
+          <form>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-dark text-warning border-warning"><i
+                    class="fas fa-hamburger"></i></span>
+              </div>
+              <input list="burgers" type="text" class="form-control" name="burger_name" id="burger_name"
+                placeholder="Insert Name">
+              <datalist id="burgers">
+                <option value="Western Bacon Cheeseburger">
+                <option value="Beyond BBQ Cheeseburger">
+                <option value="Sriracha Bacon Burger">
+                <option value="Bleu Ribbon Burger">
+                <option value="Grilled Turkey Burger">
+              </datalist>
+              <div class="input-group-append">
+                <button class="btn btn-outline-warning" type="submit" id="submit">Add burger</button>
+              </div>
+            </div>
+            <div class="invalid-feedback"></div>
+          </form>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <ul class="list-group">
+            {{#each burger}}
+            {{#if devoured}}
+            <li class="list-group-item bg-warning text-center burgers">
+              {{@index}}. {{ burger_name }} <span class="float-right"> {{> burger/button devoured=true}}</span>
+            </li>
+            {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
