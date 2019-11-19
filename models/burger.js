@@ -15,7 +15,7 @@ const burger = {
       orm.updateOne('burgers', values, columnName, conditionValue, function(res) {
         cb(res);
       });
-    } 
+    }
   };
 
 module.exports = burger;
