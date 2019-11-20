@@ -8,7 +8,7 @@
             {{#unless devoured}}
             <li class="list-group-item border-warning">
               <div class="d-flex w-100 justify-content-between burgers">
-                {{@index}}. {{ burger_name }} <span class="float-right"> {{> burger/button devoured=false}}</span>
+                {{ burger_name }} <span class="float-right"> {{> burger/button devoured=false}}</span>
               </div>
             </li>
             {{/unless}}
@@ -53,7 +53,7 @@
             {{#each burger}}
             {{#if devoured}}
             <li class="list-group-item bg-warning text-center burgers">
-              {{@index}}. {{ burger_name }} <span class="float-right"> {{> burger/button devoured=true}}</span>
+              {{ burger_name }} <span class="float-right"> {{> burger/button devoured=true}}</span>
             </li>
             {{/if}}
             {{/each}}
