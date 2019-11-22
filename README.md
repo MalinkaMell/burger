@@ -11,4 +11,6 @@ Whenever a user submits a burger's name, your app will display the burger on the
 Each burger in the waiting area also has a Devour it! button. When the user clicks it, the burger will move to the right side of the page.
 
 
+**Optimized for 1920x1080 screen resolution and Google Chrome Version 78**
+
 _Made for University of Arizona Coding Bootcamp, Week-14, November 2019_
