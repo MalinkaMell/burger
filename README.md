@@ -29,6 +29,4 @@ Each burger in the waiting area also has a Devour it! button. When the user clic
 
 **Optimized for 1920x1080 screen resolution and Google Chrome Version 78**
 
-**Optimized for 1920x1080 screen resolution and Google Chrome Version 78**
-
 _Made for University of Arizona Coding Bootcamp, Week-14, November 2019_
